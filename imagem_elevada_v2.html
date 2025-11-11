@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Elevada - Captura de Vídeo e Imagem com Drone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link para o CSS do Swiper.js (Carrossel) -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #F9FAFB; /* text-gray-50 */
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Vista+A%C3%A9rea+Deslumbrante');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            color: #38bdf8; /* text-sky-400 */
+        }
+        /* Estilos para o carrossel */
+        .swiper {
+            width: 100%;
+            height: auto;
+            padding-bottom: 50px; /* Espaço para a paginação */
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #111827;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            max-height: 70vh; /* Limita a altura em ecrãs maiores */
+        }
+        /* Cor das setas e pontos de navegação */
+        :root {
+            --swiper-navigation-color: #ffffff;
+            --swiper-pagination-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed w-full z-50 top-0 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider">
+                <i class="fa-solid fa-camera-retro mr-2 text-sky-400"></i>Imagem <span class="font-light">Elevada</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-300 hover:text-sky-400 transition duration-300">Início</a>
+                <a href="#galeria" class="text-gray-300 hover:text-sky-400 transition duration-300">Galeria</a>
+                <a href="#servicos" class="text-gray-300 hover:text-sky-400 transition duration-300">Serviços</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-sky-400 transition duration-300">Portfólio</a>
+                <a href="#contato" class="text-gray-300 hover:text-sky-400 transition duration-300">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Móvel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#inicio" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Início</a>
+            <a href="#galeria" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Galeria</a>
+            <a href="#servicos" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Serviços</a>
+            <a href="#portfolio" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Portfólio</a>
+            <a href="#contato" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Secção Inicial (Hero) -->
+        <section id="inicio" class="hero-section h-screen flex items-center justify-center text-center">
+            <div class="bg-black/60 p-8 md:p-12 rounded-lg">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Perspetivas Únicas, Imagens Inesquecíveis</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Capturamos a beleza do mundo de um ângulo diferente. Damos vida à sua visão com vídeos e fotografias aéreas de alta definição.</p>
+                <a href="#contato" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105">Peça o seu Orçamento</a>
+            </div>
+        </section>
+
+        <!-- Secção do Carrossel de Imagens -->
+        <section id="galeria" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Galeria de Destaques</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Veja o poder da nossa perspetiva aérea através de alguns dos nossos melhores momentos.</p>
+                </div>
+                <!-- Swiper -->
+                <div class="swiper mySwiper rounded-lg overflow-hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/0c4a6e/ffffff?text=Drone+sobre+a+Serra" alt="Drone a voar sobre montanhas"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/7c2d12/ffffff?text=Cidade+ao+Entardecer" alt="Vista aérea de uma cidade ao pôr do sol"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/1f2937/ffffff?text=Equipamento+Profissional" alt="Close-up de um drone profissional"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/1e3a8a/ffffff?text=Costa+Atl%C3%A2ntica" alt="Vista aérea da costa portuguesa"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/4d7c0f/ffffff?text=Vinhas+do+Douro" alt="Vista aérea de vinhas"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Serviços -->
+        <section id="servicos" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Os Nossos Serviços</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Oferecemos soluções aéreas personalizadas para uma variedade de indústrias e necessidades.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Serviço 1: Imobiliário -->
+                    <div class="bg-gray-900 p-8 rounded-lg text-center transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-sky-400 mb-4"><i class="fas fa-home text-5xl"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Imobiliário</h3>
+                        <p class="text-gray-400 text-sm">Fotografias e vídeos aéreos que destacam propriedades, mostrando a sua localização e características únicas.</p>
+                    </div>
+                    <!-- Serviço 2: Eventos -->
+                    <div class="bg-gray-900 p-8 rounded-lg text-center transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-sky-400 mb-4"><i class="fas fa-calendar-star text-5xl"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Eventos e Casamentos</h3>
+                        <p class="text-gray-400 text-sm">Cobertura cinematográfica de eventos, capturando momentos especiais de uma perspetiva deslumbrante e dinâmica.</p>
+                    </div>
+                    <!-- Serviço 3: Inspeções -->
+                    <div class="bg-gray-900 p-8 rounded-lg text-center transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-sky-400 mb-4"><i class="fas fa-hard-hat text-5xl"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Inspeções Técnicas</h3>
+                        <p class="text-gray-400 text-sm">Inspeção segura e eficiente de infraestruturas, telhados, e áreas de difícil acesso, reduzindo riscos e custos.</p>
+                    </div>
+                    <!-- Serviço 4: Publicidade -->
+                    <div class="bg-gray-900 p-8 rounded-lg text-center transform hover:-translate-y-2 transition duration-500">
+                        <div class="text-sky-400 mb-4"><i class="fas fa-video text-5xl"></i></div>
+                        <h3 class="text-xl font-bold text-white mb-2">Publicidade e Cinema</h3>
+                        <p class="text-gray-400 text-sm">Produção de conteúdo aéreo de alta qualidade para anúncios, filmes e projetos criativos que exigem impacto visual.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção do Portfólio -->
+        <section id="portfolio" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Portfólio</h2>
+                    <p class="text-gray-400 mt-4">Uma amostra do nosso trabalho.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/1e40af/ffffff?text=Costa+Vicentina" alt="Imagem aérea de uma costa" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Costa Vicentina</p></div></div>
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/be123c/ffffff?text=Casamento+no+Douro" alt="Imagem aérea de um casamento" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Casamento no Douro</p></div></div>
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/166534/ffffff?text=Propriedade+Rural" alt="Imagem aérea de uma propriedade" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Propriedade Rural</p></div></div>
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/b45309/ffffff?text=Inspe%C3%A7%C3%A3o+E%C3%B3lica" alt="Imagem aérea de turbinas eólicas" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Inspeção Eólica</p></div></div>
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/6d28d9/ffffff?text=Evento+Desportivo" alt="Imagem aérea de um evento desportivo" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Evento Desportivo</p></div></div>
+                    <div class="group relative overflow-hidden rounded-lg"><img src="https://placehold.co/600x400/047857/ffffff?text=Serra+da+Estrela" alt="Imagem aérea de uma serra" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"><div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Serra da Estrela</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção de Contato -->
+        <section id="contato" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Entre em Contato</h2>
+                    <p class="text-gray-400 mt-4">Vamos conversar sobre o seu próximo projeto. Envie-nos uma mensagem!</p>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <form action="#" method="POST" class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div><label for="name" class="block text-gray-300 mb-2">Nome</label><input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-sky-500 text-white" required></div>
+                            <div><label for="email" class="block text-gray-300 mb-2">Email</label><input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-sky-500 text-white" required></div>
+                        </div>
+                        <div class="mb-6"><label for="message" class="block text-gray-300 mb-2">Mensagem</label><textarea id="message" name="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-2 px-4 focus:outline-none focus:ring-2 focus:ring-sky-500 text-white" required></textarea></div>
+                        <div class="text-center"><button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300">Enviar Mensagem</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <div class="mb-4">
+                <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2024 Imagem Elevada. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Website desenhado com <i class="fas fa-heart text-red-500"></i></p>
+        </div>
+    </footer>
+
+    <!-- Script para o Swiper.js (Carrossel) -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        // Inicialização do carrossel Swiper
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true, // Para que o carrossel seja infinito
+        });
+
+        // Script para o menu móvel
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fecha o menu móvel ao clicar num link
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        }
+    </script>
+
+</body>
+</html>
