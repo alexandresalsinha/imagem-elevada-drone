@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagem Elevada - Captura de Vídeo e Imagem com Drone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Link para o CSS do Swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #F9FAFB; /* text-gray-50 */
+            scroll-behavior: smooth;
+        }
+        .hero-section {
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=Vista+A%C3%A9rea+Deslumbrante');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            color: #38bdf8; /* text-sky-400 */
+        }
+        
+        /* Configuração do Swiper */
+        .swiper {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Swiper Portfólio com 3 Linhas */
+        .portfolio-swiper {
+            height: 750px; /* Altura fixa necessária para o modo Grid do Swiper */
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 50px !important;
+        }
+
+        .portfolio-swiper .swiper-slide {
+            height: calc((100% - 60px) / 3) !important; /* Calcula altura para 3 linhas com espaçamento */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .portfolio-item {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        /* Lightbox Swiper */
+        .lightbox-swiper .swiper-slide img {
+            max-height: 85vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+
+        :root {
+            --swiper-navigation-color: #ffffff;
+            --swiper-pagination-color: #38bdf8;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-swiper {
+                height: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed w-full z-50 top-0 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white tracking-wider">
+                <i class="fa-solid fa-camera-retro mr-2 text-sky-400"></i>Imagem <span class="font-light">Elevada</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm">
+                <a href="#inicio" class="text-gray-300 hover:text-sky-400 transition duration-300">Início</a>
+                <a href="#galeria" class="text-gray-300 hover:text-sky-400 transition duration-300">Galeria</a>
+                <a href="#sobre-nos" class="text-gray-300 hover:text-sky-400 transition duration-300">Sobre Nós</a>
+                <a href="#servicos" class="text-gray-300 hover:text-sky-400 transition duration-300">Serviços</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-sky-400 transition duration-300">Portfólio</a>
+                <a href="#testemunhos" class="text-gray-300 hover:text-sky-400 transition duration-300">Testemunhos</a>
+                <a href="#contato" class="text-gray-300 hover:text-sky-400 transition duration-300">Contato</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Menu Móvel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#inicio" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Início</a>
+            <a href="#galeria" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Galeria</a>
+            <a href="#sobre-nos" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Sobre Nós</a>
+            <a href="#servicos" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Serviços</a>
+            <a href="#portfolio" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Portfólio</a>
+            <a href="#testemunhos" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Testemunhos</a>
+            <a href="#contato" class="block text-center py-3 px-4 text-sm text-gray-200 hover:bg-sky-500 hover:text-white">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section h-screen flex items-center justify-center text-center">
+            <div class="bg-black/60 p-8 md:p-12 rounded-lg mx-4">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">Perspetivas Únicas, Imagens Inesquecíveis</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">Capturamos a beleza do mundo de um ângulo diferente. Damos vida à sua visão com vídeos e fotografias aéreas de alta definição.</p>
+                <a href="#contato" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 transform hover:scale-105 inline-block">Peça o seu Orçamento</a>
+            </div>
+        </section>
+
+        <!-- Galeria Destaques -->
+        <section id="galeria" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Galeria de Destaques</h2>
+                </div>
+                <div class="swiper mySwiper swiper-main rounded-lg overflow-hidden shadow-2xl">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/0c4a6e/ffffff?text=Drone+sobre+a+Serra" alt="Drone" class="w-full h-[60vh] object-cover"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/7c2d12/ffffff?text=Cidade+ao+Entardecer" alt="Cidade" class="w-full h-[60vh] object-cover"></div>
+                        <div class="swiper-slide"><img src="https://placehold.co/1200x700/1e3a8a/ffffff?text=Costa+Atl%C3%A2ntica" alt="Costa" class="w-full h-[60vh] object-cover"></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nós -->
+        <section id="sobre-nos" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-bold section-title mb-6">A Nossa Missão</h2>
+                        <p class="text-gray-300 mb-4 font-light leading-relaxed">A "Imagem Elevada" nasceu da paixão por tecnologia e arte. Acreditamos que a perspetiva aérea oferece uma forma completamente nova de ver o mundo.</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/1f2937/38bdf8?text=Imagem+Elevada+Equipa" class="rounded-lg shadow-2xl w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfólio: Carrossel de 3 Linhas -->
+        <section id="portfolio" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Portfólio</h2>
+                    <p class="text-gray-400 mt-4">Navegue horizontalmente para explorar os nossos projetos em 3 linhas.</p>
+                </div>
+                
+                <div class="swiper portfolio-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Itens do Portfólio (Total 12 para mostrar o scroll) -->
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/1e40af/ffffff?text=Costa+1,https://placehold.co/1200x800/1e3a8a/ffffff?text=Costa+2">
+                                <img src="https://placehold.co/1200x800/1e40af/ffffff?text=Costa+Vicentina" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Costa Vicentina</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/be123c/ffffff?text=Casamento+1">
+                                <img src="https://placehold.co/1200x800/be123c/ffffff?text=Casamento+Douro" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Casamento Douro</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/166534/ffffff?text=Campo+1">
+                                <img src="https://placehold.co/1200x800/166534/ffffff?text=Turismo+Rural" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Turismo Rural</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/b45309/ffffff?text=Eolica+1">
+                                <img src="https://placehold.co/1200x800/b45309/ffffff?text=Inspeção+Energia" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Inspeção Energia</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/6d28d9/ffffff?text=Desporto+1">
+                                <img src="https://placehold.co/1200x800/6d28d9/ffffff?text=Evento+Desportivo" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Evento Desportivo</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/0369a1/ffffff?text=Cidade+1">
+                                <img src="https://placehold.co/1200x800/0369a1/ffffff?text=Urbanismo" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Urbanismo</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/334155/ffffff?text=Obra+1">
+                                <img src="https://placehold.co/1200x800/334155/ffffff?text=Acompanhamento+Obra" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Acompanhamento Obra</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/4338ca/ffffff?text=Praia+1">
+                                <img src="https://placehold.co/1200x800/4338ca/ffffff?text=Promoção+Turística" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Promoção Turística</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/065f46/ffffff?text=Agro+1">
+                                <img src="https://placehold.co/1200x800/065f46/ffffff?text=Agricultura+Precisão" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Agricultura Precisão</div>
+                            </div>
+                        </div>
+                        <!-- Itens extras para preencher as linhas -->
+                         <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/1e293b/ffffff?text=Drone+1">
+                                <img src="https://placehold.co/1200x800/1e293b/ffffff?text=Tecnologia+Fpv" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Tecnologia FPV</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/7c2d12/ffffff?text=Vinha+1">
+                                <img src="https://placehold.co/1200x800/7c2d12/ffffff?text=Vinhas+do+Douro" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Vinhas do Douro</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/0f172a/ffffff?text=Noite+1">
+                                <img src="https://placehold.co/1200x800/0f172a/ffffff?text=Captura+Noturna" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold">Captura Noturna</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paginação e Navegação -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços -->
+        <section id="servicos" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold section-title">Serviços</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="bg-gray-900 p-8 rounded-lg transform hover:-translate-y-2 transition"><i class="fas fa-home text-4xl text-sky-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Imobiliário</h3><p class="text-sm text-gray-400">Destaque propriedades com vistas aéreas.</p></div>
+                    <div class="bg-gray-900 p-8 rounded-lg transform hover:-translate-y-2 transition"><i class="fas fa-video text-4xl text-sky-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Publicidade</h3><p class="text-sm text-gray-400">Conteúdo cinematográfico de impacto.</p></div>
+                    <div class="bg-gray-900 p-8 rounded-lg transform hover:-translate-y-2 transition"><i class="fas fa-hard-hat text-4xl text-sky-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Inspeções</h3><p class="text-sm text-gray-400">Dados técnicos precisos e seguros.</p></div>
+                    <div class="bg-gray-900 p-8 rounded-lg transform hover:-translate-y-2 transition"><i class="fas fa-calendar-alt text-4xl text-sky-400 mb-4"></i><h3 class="text-xl font-bold mb-2">Eventos</h3><p class="text-sm text-gray-400">Capture momentos inesquecíveis.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato -->
+        <section id="contato" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 max-w-4xl text-center">
+                <h2 class="text-4xl font-bold section-title mb-12">Contato</h2>
+                <form action="https://formspree.io/f/your-id" method="POST" class="bg-gray-900 p-10 rounded-xl shadow-2xl text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <input type="text" name="name" placeholder="Nome" class="bg-gray-800 p-4 rounded-lg focus:ring-2 focus:ring-sky-500 outline-none w-full" required>
+                        <input type="email" name="email" placeholder="Email" class="bg-gray-800 p-4 rounded-lg focus:ring-2 focus:ring-sky-500 outline-none w-full" required>
+                    </div>
+                    <textarea name="message" placeholder="A sua mensagem..." rows="5" class="bg-gray-800 p-4 rounded-lg focus:ring-2 focus:ring-sky-500 outline-none w-full mb-6" required></textarea>
+                    <button type="submit" class="bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-10 rounded-full transition w-full md:w-auto">Enviar Pedido</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4">
+        <button id="lightbox-close" class="absolute top-6 right-6 z-[110] bg-white text-black rounded-full w-12 h-12 text-3xl">&times;</button>
+        <div class="w-full h-full max-w-6xl">
+            <div class="swiper lightbox-swiper h-full">
+                <div class="swiper-wrapper" id="lightbox-wrapper"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 py-10 border-t border-gray-800 text-center text-gray-500">
+        <p>&copy; 2024 Imagem Elevada. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Swiper Principal (Hero)
+            new Swiper(".mySwiper", {
+                loop: true,
+                autoplay: { delay: 4000 },
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+            });
+
+            // 2. Swiper Portfolio (3 LINHAS)
+            var swiperPortfolio = new Swiper(".portfolio-swiper", {
+                slidesPerView: 1,
+                grid: { rows: 3, fill: 'row' },
+                spaceBetween: 30,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                breakpoints: {
+                    768: { slidesPerView: 2, grid: { rows: 3 } },
+                    1024: { slidesPerView: 3, grid: { rows: 3 } }
+                }
+            });
+
+            // 3. Lógica do Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxWrapper = document.getElementById('lightbox-wrapper');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            var lightboxSwiper = new Swiper(".lightbox-swiper", {
+                observer: true,
+                observeParents: true,
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+            });
+
+            const buildGallery = (imagesString) => {
+                const images = imagesString.split(',');
+                lightboxWrapper.innerHTML = '';
+                images.forEach(url => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    slide.innerHTML = `<img src="${url.trim()}">`;
+                    lightboxWrapper.appendChild(slide);
+                });
+                lightboxSwiper.update();
+                lightboxSwiper.slideTo(0, 0);
+            };
+
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    buildGallery(item.dataset.gallery);
+                    lightbox.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            const closeLb = () => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            lightboxClose.addEventListener('click', closeLb);
+            lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLb(); });
+            document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLb(); });
+
+            // Menu Móvel
+            const btn = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        });
+    </script>
+</body>
+</html>
+```
