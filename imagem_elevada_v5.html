@@ -39,6 +39,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-right: 15px !important;
         }
         .swiper-slide img {
             display: block;
@@ -154,7 +155,7 @@
         </section>
 
         <!-- Secção do Portfólio -->
-        <!-- <section id="portfolio" class="py-20 bg-gray-800">
+        <section id="portfolio" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl font-bold section-title">Portfólio</h2>
@@ -187,7 +188,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
          <!-- Portfólio: Carrossel de 2 Linhas -->
         <section id="portfolio" class="py-24 bg-gray-900">
@@ -197,13 +198,18 @@
                     <p class="text-gray-400">Explore as nossas galerias individuais de cada projeto.</p>
                 </div>
                 
+                   <!-- <div class="group relative overflow-hidden rounded-lg">
+                        <img src="DJI_0429.JPG" alt="Imagem aérea de uma costa" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                        <div class="portfolio-image absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 cursor-pointer"><p class="text-white text-lg font-bold"><p class="text-white text-lg font-bold">Marisol à noite</p></div>
+                    </div> -->
+
                 <div class="swiper portfolio-swiper">
                     <div class="swiper-wrapper">
                         <!-- Itens do Portfólio com múltiplas imagens em data-gallery -->
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" 
-                                 data-gallery="https://placehold.co/1200x800/1e40af/ffffff?text=Costa+Vicentina+1,https://placehold.co/1200x800/1e3a8a/ffffff?text=Costa+Vicentina+2,https://placehold.co/1200x800/0c4a6e/ffffff?text=Costa+Vicentina+3">
-                                <img src="https://placehold.co/1200x800/1e40af/ffffff?text=Costa+Vicentina" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
                                     <span class="font-bold text-lg">Costa Vicentina</span>
                                     <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
@@ -211,36 +217,38 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" 
-                                 data-gallery="https://placehold.co/1200x800/be123c/ffffff?text=Casamento+1,https://placehold.co/1200x800/9d174d/ffffff?text=Casamento+2">
-                                <img src="https://placehold.co/1200x800/be123c/ffffff?text=Casamento+Douro" class="w-full h-full object-cover">
+                            <div class="group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg">Casamento Douro</span>
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
                                     <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/166534/ffffff?text=Turismo+1,https://placehold.co/1200x800/064e3b/ffffff?text=Turismo+2">
-                                <img src="https://placehold.co/1200x800/166534/ffffff?text=Turismo+Rural" class="w-full h-full object-cover">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg text-center">Turismo Rural</span>
-                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xvs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/b45309/ffffff?text=Inspeção+1,https://placehold.co/1200x800/92400e/ffffff?text=Inspeção+2">
-                                <img src="https://placehold.co/1200x800/b45309/ffffff?text=Inspeção+Energia" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg text-center">Inspeção Energia</span>
-                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/6d28d9/ffffff?text=Evento+1,https://placehold.co/1200x800/5b21b6/ffffff?text=Evento+2">
-                                <img src="https://placehold.co/1200x800/6d28d9/ffffff?text=Evento+Desportivo" class="w-full h-full object-cover">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
                                     <span class="font-bold text-lg text-center">Evento Desportivo</span>
                                     <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
@@ -248,28 +256,28 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/0369a1/ffffff?text=Urbanismo+1">
-                                <img src="https://placehold.co/1200x800/0369a1/ffffff?text=Urbanismo" class="w-full h-full object-cover">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg text-center">Urbanismo</span>
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
                                     <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
                                 </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/334155/ffffff?text=Obra+1,https://placehold.co/1200x800/1e293b/ffffff?text=Obra+2">
-                                <img src="https://placehold.co/1200x800/334155/ffffff?text=Construção+Civil" class="w-full h-full object-cover">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                                 <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg text-center">Construção Civil</span>
-                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="portfolio-item group cursor-pointer" data-gallery="https://placehold.co/1200x800/4338ca/ffffff?text=Praia+1,https://placehold.co/1200x800/3730a3/ffffff?text=Praia+2">
-                                <img src="https://placehold.co/1200x800/4338ca/ffffff?text=Promoção+Turística" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
-                                    <span class="font-bold text-lg text-center">Promoção Turística</span>
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
                                     <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
                                 </div>
                             </div>
