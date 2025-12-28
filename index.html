@@ -39,6 +39,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-right: 15px !important;
+            margin-top: 15px !important;
         }
         .swiper-slide img {
             display: block;
@@ -185,22 +187,107 @@
                         <img src="DJI_0244.JPG" alt="Imagem aérea de uma serra" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
                         <div class="portfolio-image absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Serra da Estrela</p></div>
                     </div>
-                    <!-- <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x400/166534/ffffff?text=Propriedade+Rural" alt="Imagem aérea de uma propriedade" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
-                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Propriedade Rural</p></div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x400/b45309/ffffff?text=Inspe%C3%A7%C3%A3o+E%C3%B3lica" alt="Imagem aérea de turbinas eólicas" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
-                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Inspeção Eólica</p></div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x400/6d28d9/ffffff?text=Evento+Desportivo" alt="Imagem aérea de um evento desportivo" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
-                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Evento Desportivo</p></div>
-                    </div>
-                    <div class="group relative overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x400/047857/ffffff?text=Serra+da+Estrela" alt="Imagem aérea de uma serra" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
-                        <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500"><p class="text-white text-lg font-bold">Serra da Estrela</p></div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Portfólio: Carrossel de 2 Linhas -->
+        <section id="portfolio" class="py-24 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold section-title mb-4">Portfólio</h2>
+                    <p class="text-gray-400">Explore as nossas galerias individuais de cada projeto.</p>
+                </div>
+                
+                   <!-- <div class="group relative overflow-hidden rounded-lg">
+                        <img src="DJI_0429.JPG" alt="Imagem aérea de uma costa" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                        <div class="portfolio-image absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500 cursor-pointer"><p class="text-white text-lg font-bold"><p class="text-white text-lg font-bold">Marisol à noite</p></div>
                     </div> -->
+
+                <div class="swiper portfolio-swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Itens do Portfólio com múltiplas imagens em data-gallery -->
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="group relative overflow-hidden rounded-lg" 
+                                 data-gallery="0922.jpg,1104(3).jpg">
+                                <img src="0922.jpg" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0345.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" 
+                                 data-gallery="DJI_0429.JPG,1104(3).jpg">
+                                <img src="DJI_0429.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg">Costa Vicentina</span>
+                                    <span class="text-xvs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg, 0417.png,DJI_0239.JPG">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" data-name="2 column , first item">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0077_2.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-gallery="DJI_0244.JPG,1117.jpg">
+                                <img src="DJI_0244.JPG" class="portfolio-image w-full h-full object-cover transform group-hover:scale-110 transition duration-500 cursor-pointer">
+                                <div class="absolute inset-0 bg-sky-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4">
+                                    <span class="font-bold text-lg text-center">Evento Desportivo</span>
+                                    <span class="text-xs uppercase tracking-widest mt-2 bg-sky-500 px-3 py-1 rounded">Ver Galeria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Paginação e Navegação -->
+                    <div class="swiper-button-next !text-sky-400"></div>
+                    <div class="swiper-button-prev !text-sky-400"></div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
@@ -227,11 +314,18 @@
     </main>
 
     <!-- NOVA SECÇÃO: Lightbox/Modal Overlay -->
-    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300">
-        <div class="relative max-w-6xl max-h-full">
-            <img id="lightbox-image" src="" alt="Imagem do Portfólio em tamanho grande" class="rounded-lg max-w-full max-h-[90vh] shadow-2xl">
-            <!-- Botão de Fechar -->
-            <button id="lightbox-close" class="absolute -top-3 -right-3 bg-white text-gray-900 rounded-full w-10 h-10 flex items-center justify-center text-3xl font-bold leading-none hover:bg-gray-200 transition-colors">&times;</button>
+  <!-- Lightbox Modal com Carrossel -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/98 backdrop-blur-xl flex items-center justify-center p-4 transition-all duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 z-[110] bg-white hover:bg-sky-500 hover:text-white text-black rounded-full w-12 h-12 text-3xl flex items-center justify-center transition-all shadow-xl">&times;</button>
+        <div class="w-full h-full max-w-6xl flex items-center justify-center">
+            <div class="swiper lightbox-swiper">
+                <div class="swiper-wrapper" id="lightbox-wrapper">
+                    <!-- Slides dinâmicos injetados via JS -->
+                </div>
+                <div class="swiper-button-next !text-white !scale-75 md:!scale-100"></div>
+                <div class="swiper-button-prev !text-white !scale-75 md:!scale-100"></div>
+                <div class="swiper-pagination !text-white"></div>
+            </div>
         </div>
     </div>
 
@@ -244,7 +338,7 @@
                 <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-youtube"></i></a>
                 <a href="#" class="mx-3 hover:text-sky-400 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <p>&copy; 2024 Imagem Elevada. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Imagem Elevada. Todos os direitos reservados.</p>
             <p class="text-sm mt-2">Website desenhado com <i class="fas fa-heart text-red-500"></i></p>
         </div>
     </footer>
@@ -275,6 +369,19 @@
                 loop: true,
             });
             swiper.autoplay.stop();
+
+             // 2. Swiper Portfolio (2 LINHAS)
+            new Swiper(".portfolio-swiper", {
+                slidesPerView: 1,
+                grid: { rows: 2, fill: 'row' },
+                spaceBetween: 30,
+                pagination: { el: ".swiper-pagination", clickable: true },
+                navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+                breakpoints: {
+                    768: { slidesPerView: 2, grid: { rows: 2 } },
+                    1024: { slidesPerView: 3, grid: { rows: 2 } }
+                }
+            });
             // Script para o menu móvel
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -295,48 +402,131 @@
             }
 
             // Script para o Lightbox do Portfólio
-            const lightbox = document.getElementById('lightbox');
+        //     const lightbox = document.getElementById('lightbox');
             
-            // Adicionado verificação para caso o lightbox exista
-            if (lightbox) {
-                const lightboxImage = document.getElementById('lightbox-image');
-                const lightboxClose = document.getElementById('lightbox-close');
-                const portfolioImages = document.querySelectorAll('.portfolio-image');
+        //     // Adicionado verificação para caso o lightbox exista
+        //     if (lightbox) {
+        //         const lightboxImage = document.getElementById('lightbox-image');
+        //         const lightboxClose = document.getElementById('lightbox-close');
+        //         const portfolioImages = document.querySelectorAll('.portfolio-image');
 
-                portfolioImages.forEach(image => {
-                    image.addEventListener('click', () => {
-                    debugger
-                        var imageUrl = image.src;
-                        if (imageUrl === undefined) {
-                            image = image.previousElementSibling;
-                            imageUrl = image.src;
-                        }
-                        lightboxImage.src = imageUrl;
-                        lightbox.classList.remove('hidden');
-                        lightbox.classList.add('flex');
-                    });
+        //         portfolioImages.forEach(image => {
+        //             image.addEventListener('click', () => {
+        //             debugger
+        //                 var imageUrl = image.src;
+        //                 if (imageUrl === undefined) {
+        //                     image = image.previousElementSibling;
+        //                     imageUrl = image.src;
+        //                 }
+        //                 lightboxImage.src = imageUrl;
+        //                 lightbox.classList.remove('hidden');
+        //                 lightbox.classList.add('flex');
+        //             });
+        //         });
+
+        //         // Função para fechar o lightbox
+        //         const closeLightbox = () => {
+        //             lightbox.classList.add('hidden');
+        //             lightbox.classList.remove('flex');
+        //             lightboxImage.src = ""; // Limpa o src para não "piscar" na próxima vez
+        //         };
+
+        //         // Fechar ao clicar no botão 'X'
+        //         if(lightboxClose) {
+        //             lightboxClose.addEventListener('click', closeLightbox);
+        //         }
+
+        //         // Fechar ao clicar fora da imagem (no fundo escuro)
+        //         lightbox.addEventListener('click', (e) => {
+        //             // Verifica se o clique foi no próprio fundo (o overlay)
+        //             if (e.target === lightbox) {
+        //                 closeLightbox();
+        //             }
+        //         });
+        //     }
+
+        
+            // 3. Inicialização e Lógica do Lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxWrapper = document.getElementById('lightbox-wrapper');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            // Inicializar Swiper do Lightbox uma vez
+            const lightboxSwiperInstance = new Swiper(".lightbox-swiper", {
+                slidesPerView: 1,
+                spaceBetween: 40,
+                observer: true,
+                observeParents: true,
+                navigation: { 
+                    nextEl: ".swiper-button-next", 
+                    prevEl: ".swiper-button-prev" 
+                },
+                pagination: { 
+                    el: ".swiper-pagination",
+                    type: "fraction"
+                },
+                keyboard: { enabled: true }
+            });
+
+            // Função para reconstruir a galeria no lightbox
+            const openGallery = (imagesString) => {
+                const images = imagesString.split(',');
+                
+                // Limpar slides anteriores
+                lightboxWrapper.innerHTML = '';
+                
+                // Adicionar novos slides
+                images.forEach(url => {
+                    const slide = document.createElement('div');
+                    slide.className = 'swiper-slide';
+                    const img = document.createElement('img');
+                    img.src = url.trim();
+                    img.alt = "Vista Detalhada do Projeto";
+                    slide.appendChild(img);
+                    lightboxWrapper.appendChild(slide);
                 });
 
-                // Função para fechar o lightbox
-                const closeLightbox = () => {
-                    lightbox.classList.add('hidden');
-                    lightbox.classList.remove('flex');
-                    lightboxImage.src = ""; // Limpa o src para não "piscar" na próxima vez
-                };
+                // Notificar o Swiper sobre as mudanças e resetar
+                lightboxSwiperInstance.update();
+                lightboxSwiperInstance.slideTo(0, 0);
+                
+                // Mostrar o Modal
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Bloquear scroll
+            };
 
-                // Fechar ao clicar no botão 'X'
-                if(lightboxClose) {
-                    lightboxClose.addEventListener('click', closeLightbox);
-                }
-
-                // Fechar ao clicar fora da imagem (no fundo escuro)
-                lightbox.addEventListener('click', (e) => {
-                    // Verifica se o clique foi no próprio fundo (o overlay)
-                    if (e.target === lightbox) {
-                        closeLightbox();
+            // Evento de Clique nos itens do portfólio
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const gallery = item.getAttribute('data-gallery');
+                    if (gallery) {
+                        openGallery(gallery);
                     }
                 });
-            }
+            });
+
+            // Fechar Modal
+            const closeLb = () => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            lightboxClose.addEventListener('click', closeLb);
+            
+            // Fechar ao clicar no fundo
+            lightbox.addEventListener('click', (e) => { 
+                if(e.target === lightbox || e.target.classList.contains('swiper-slide')) {
+                    closeLb(); 
+                }
+            });
+
+            // Fechar com tecla ESC
+            document.addEventListener('keydown', (e) => { 
+                if(e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLb(); 
+                }
+            });
         });
     </script>
 
