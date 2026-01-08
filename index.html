@@ -484,32 +484,43 @@
             });
 
             // Função para reconstruir a galeria no lightbox
+         const isVideo = (url) => {
+                return url.trim().toLowerCase().endsWith('.mp4') || 
+                       url.trim().toLowerCase().endsWith('.webm');
+            };
+
             const openGallery = (imagesString) => {
-                const images = imagesString.split(',');
-                
-                // Limpar slides anteriores
+                const mediaItems = imagesString.split(',');
                 lightboxWrapper.innerHTML = '';
                 
-                // Adicionar novos slides
-                images.forEach(url => {
+                mediaItems.forEach(url => {
                     const slide = document.createElement('div');
                     slide.className = 'swiper-slide';
-                    const img = document.createElement('img');
-                    img.src = url.trim();
-                    img.alt = "Vista Detalhada do Projeto";
-                    slide.appendChild(img);
+                    const cleanUrl = url.trim();
+
+                    if (isVideo(cleanUrl)) {
+                        const video = document.createElement('video');
+                        video.src = cleanUrl;
+                        video.controls = true;
+                        video.autoplay = true;
+                        video.muted = true;
+                        video.loop = true;
+                        video.playsInline = true;
+                        slide.appendChild(video);
+                    } else {
+                        const img = document.createElement('img');
+                        img.src = cleanUrl;
+                        img.alt = "Vista Detalhada";
+                        slide.appendChild(img);
+                    }
                     lightboxWrapper.appendChild(slide);
                 });
 
-                // Notificar o Swiper sobre as mudanças e resetar
                 lightboxSwiperInstance.update();
                 lightboxSwiperInstance.slideTo(0, 0);
-                
-                // Mostrar o Modal
                 lightbox.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Bloquear scroll
+                document.body.style.overflow = 'hidden';
             };
-
             // Evento de Clique nos itens do portfólio
             portfolioItems.forEach(item => {
                 item.addEventListener('click', (e) => {
