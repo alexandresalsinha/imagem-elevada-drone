@@ -1,0 +1,24 @@
+# robots.txt for Imagem Elevada - Drone Photography & Video Services
+
+User-agent: *
+Allow: /
+Disallow: /purgatory/
+
+# Sitemap location
+Sitemap: https://www.imagemelevada.pt/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 10
+
+# Allow common search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://www.imagemelevada.pt/</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0380.JPG_AI.png</image:loc>
+            <image:title>Vista Aérea Deslumbrante - Fonte da Telha</image:title>
+            <image:caption>Fotografia aérea profissional capturada com drone em Portugal</image:caption>
+        </image:image>
+    </url>
+    
+    <!-- Galeria Section -->
+    <url>
+        <loc>https://www.imagemelevada.pt/#galeria</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0077_2.JPG</image:loc>
+            <image:title>Close-up de um drone profissional</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0429.JPG</image:loc>
+            <image:title>Drone a voar sobre montanhas</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/0417.png</image:loc>
+            <image:title>Vista aérea panorâmica</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/CasaConstrucao/CasaConstrucao4.jpg</image:loc>
+            <image:title>Vista aérea de construção</image:title>
+        </image:image>
+    </url>
+    
+    <!-- Sobre Nós Section -->
+    <url>
+        <loc>https://www.imagemelevada.pt/#sobre-nos</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Serviços Section -->
+    <url>
+        <loc>https://www.imagemelevada.pt/#servicos</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Portfolio Section -->
+    <url>
+        <loc>https://www.imagemelevada.pt/#portfolio</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0429.JPG</image:loc>
+            <image:title>Noite, Charneca da Caparica</image:title>
+            <image:caption>Fotografia aérea noturna</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/sorteVerde/0922.jpg</image:loc>
+            <image:title>Sorte Verde, Alentejo</image:title>
+            <image:caption>Vista aérea do Alentejo</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/CasaConstrucao/CasaConstrucao4.jpg</image:loc>
+            <image:title>Casa em construção</image:title>
+            <image:caption>Monitorização de obra com drone</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/acores/DJI_0072_bom.jpg</image:loc>
+            <image:title>Terceira, Açores</image:title>
+            <image:caption>Fotografia aérea dos Açores</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0244.JPG</image:loc>
+            <image:title>Monsanto, Castelo Branco</image:title>
+            <image:caption>Vista aérea de Monsanto</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/DJI_0077_2_GM.png</image:loc>
+            <image:title>Casa, Terceira - Açores</image:title>
+            <image:caption>Fotografia imobiliária aérea</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://www.imagemelevada.pt/images/fonteTelha/DJI_0380_widescreen.png</image:loc>
+            <image:title>Fonte da Telha</image:title>
+            <image:caption>Vista panorâmica aérea</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://www.imagemelevada.pt/images/DJI_0429.JPG</video:thumbnail_loc>
+            <video:title>Vídeo Aéreo - Casa Marisol</video:title>
+            <video:description>Vídeo profissional com drone - efeito zoom cinematográfico</video:description>
+            <video:content_loc>https://www.imagemelevada.pt/videos/casaMarisol/DJI_0471_2.mp4</video:content_loc>
+        </video:video>
+    </url>
+    
+    <!-- Contato Section -->
+    <url>
+        <loc>https://www.imagemelevada.pt/#contato</loc>
+        <lastmod>2026-02-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+</urlset>
