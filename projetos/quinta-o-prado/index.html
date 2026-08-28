@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quinta o Prado - Projeto | Imagem Elevada</title>
+    <meta name="description" content="Galeria de fotografias e vídeos aéreos com drone do projeto Quinta o Prado, por Imagem Elevada.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/webp" href="../../images/favicon.webp">
+    <link rel="apple-touch-icon" href="../../images/favicon.webp">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #F9FAFB;
+        }
+        .section-title { color: #38bdf8; }
+
+        /* Media grid tiles */
+        .media-tile {
+            position: relative;
+            aspect-ratio: 4 / 3;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            background: #1f2937;
+            cursor: pointer;
+        }
+        .media-tile img,
+        .media-tile video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            pointer-events: none;
+        }
+        .media-tile:hover img,
+        .media-tile:hover video {
+            transform: scale(1.08);
+        }
+        .media-tile .play-badge {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.25);
+            pointer-events: none;
+        }
+        .media-tile .play-badge i {
+            font-size: 2.5rem;
+            color: rgba(255,255,255,0.9);
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+        }
+        .media-tile .hover-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(12, 74, 110, 0.0);
+            transition: background 0.3s ease;
+        }
+        .media-tile:hover .hover-overlay {
+            background: rgba(12, 74, 110, 0.35);
+        }
+
+        /* Lightbox */
+        .swiper { width: 100%; height: auto; padding-bottom: 50px; }
+        .lightbox-swiper .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+        }
+        .lightbox-swiper .swiper-slide img,
+        .lightbox-swiper .swiper-slide video {
+            max-width: 100%;
+            max-height: 80vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        :root {
+            --swiper-navigation-color: #ffffff;
+            --swiper-pagination-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="bg-gray-900/100 backdrop-blur-sm w-full shadow-lg" role="banner">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../../index.html" class="text-2xl font-bold text-white tracking-wider" aria-label="Imagem Elevada - Página Inicial">
+                <img src="../../images/logo_imagem_elevada_6.webp" alt="Imagem Elevada - Logotipo" class="inline-block mr-2" style="max-width: 200px;">
+            </a>
+            <a href="../../index.html#portfolio" class="text-gray-300 hover:text-sky-400 transition duration-300 text-sm">
+                <i class="fas fa-arrow-left mr-2"></i>Voltar ao Portfólio
+            </a>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Cabeçalho do Projeto -->
+        <section class="py-16 bg-gray-900 text-center" aria-labelledby="projeto-heading">
+            <div class="container mx-auto px-6">
+                <h1 id="projeto-heading" class="text-4xl md:text-5xl font-bold section-title mb-4">Quinta o Prado</h1>
+                <p class="text-gray-400 max-w-2xl mx-auto">Fotografias e vídeos aéreos captados com drone neste projeto. Clique em qualquer imagem ou vídeo para ver em destaque.</p>
+            </div>
+        </section>
+
+        <!-- Grelha de Media -->
+        <section class="pb-20 bg-gray-900" aria-labelledby="galeria-heading">
+            <div class="container mx-auto px-6">
+                <h2 id="galeria-heading" class="sr-only">Galeria do projeto</h2>
+                <div id="media-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Preenchido dinamicamente via JS a partir de media/manifest.json -->
+                </div>
+                <p id="media-empty" class="hidden text-center text-gray-500 mt-8">Sem ficheiros na pasta media.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal com Carrossel -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 transition-all duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 z-[110] bg-white hover:bg-sky-500 hover:text-white text-black rounded-full w-12 h-12 text-3xl flex items-center justify-center transition-all shadow-xl" aria-label="Fechar">&times;</button>
+        <div class="w-full h-full max-w-6xl flex items-center justify-center">
+            <div class="swiper lightbox-swiper">
+                <div class="swiper-wrapper" id="lightbox-wrapper">
+                    <!-- Slides dinâmicos injetados via JS -->
+                </div>
+                <div class="swiper-button-next !text-white !scale-75 md:!scale-100"></div>
+                <div class="swiper-button-prev !text-white !scale-75 md:!scale-100"></div>
+                <div class="swiper-pagination !text-white"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 border-t border-gray-800" role="contentinfo">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>&copy; 2026 Imagem Elevada. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        // Lista de reserva, usada quando a página é aberta diretamente (file://) e o
+        // browser bloqueia o fetch() do manifest.json por política de CORS local.
+        // Mantém-se sincronizada com o conteúdo de media/manifest.json.
+        const FALLBACK_MANIFEST = [
+            { "file": "0828.mp4", "type": "video" },
+            { "file": "DJI_0577.JPG", "type": "image" },
+            { "file": "DJI_0578.JPG", "type": "image" }
+        ];
+
+        const MEDIA_DIR = 'media/';
+
+        function detectType(entry) {
+            if (entry.type) return entry.type;
+            const ext = entry.file.split('.').pop().toLowerCase();
+            return ['mp4', 'webm', 'mov'].includes(ext) ? 'video' : 'image';
+        }
+
+        function buildGrid(items) {
+            const grid = document.getElementById('media-grid');
+            const empty = document.getElementById('media-empty');
+            grid.innerHTML = '';
+
+            if (!items || items.length === 0) {
+                empty.classList.remove('hidden');
+                return;
+            }
+
+            items.forEach((item, index) => {
+                const type = detectType(item);
+                const src = MEDIA_DIR + item.file;
+
+                const tile = document.createElement('div');
+                tile.className = 'media-tile';
+                tile.setAttribute('data-index', index);
+                tile.setAttribute('role', 'button');
+                tile.setAttribute('tabindex', '0');
+                tile.setAttribute('aria-label', (type === 'video' ? 'Ver vídeo ' : 'Ver imagem ') + item.file);
+
+                if (type === 'video') {
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.muted = true;
+                    video.preload = 'metadata';
+                    video.playsInline = true;
+                    tile.appendChild(video);
+
+                    const badge = document.createElement('div');
+                    badge.className = 'play-badge';
+                    badge.innerHTML = '<i class="fas fa-circle-play"></i>';
+                    tile.appendChild(badge);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = item.file;
+                    img.loading = 'lazy';
+                    tile.appendChild(img);
+                }
+
+                const overlay = document.createElement('div');
+                overlay.className = 'hover-overlay';
+                tile.appendChild(overlay);
+
+                tile.addEventListener('click', () => openLightbox(items, index));
+                tile.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openLightbox(items, index);
+                    }
+                });
+
+                grid.appendChild(tile);
+            });
+        }
+
+        let lightboxSwiperInstance = null;
+
+        function openLightbox(items, startIndex) {
+            const lightbox = document.getElementById('lightbox');
+            const wrapper = document.getElementById('lightbox-wrapper');
+            wrapper.innerHTML = '';
+
+            items.forEach(item => {
+                const type = detectType(item);
+                const src = MEDIA_DIR + item.file;
+
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+
+                if (type === 'video') {
+                    const video = document.createElement('video');
+                    video.src = src;
+                    video.controls = true;
+                    video.playsInline = true;
+                    slide.appendChild(video);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = item.file;
+                    slide.appendChild(img);
+                }
+                wrapper.appendChild(slide);
+            });
+
+            if (lightboxSwiperInstance) {
+                lightboxSwiperInstance.destroy(true, true);
+            }
+            lightboxSwiperInstance = new Swiper('.lightbox-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 40,
+                initialSlide: startIndex,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction'
+                },
+                keyboard: { enabled: true },
+                on: {
+                    slideChangeTransitionStart: pauseAllVideos,
+                }
+            });
+
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function pauseAllVideos() {
+            document.querySelectorAll('#lightbox-wrapper video').forEach(v => v.pause());
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            pauseAllVideos();
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+
+            document.getElementById('lightbox').addEventListener('click', (e) => {
+                if (e.target.id === 'lightbox') closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !document.getElementById('lightbox').classList.contains('hidden')) {
+                    closeLightbox();
+                }
+            });
+
+            // Tenta ler a pasta media dinamicamente via manifest.json (funciona quando
+            // servido por http/https). Se o fetch falhar - o que acontece ao abrir o
+            // ficheiro diretamente no browser com duplo-clique (protocolo file://) -
+            // usa a lista de reserva embutida acima.
+            fetch(MEDIA_DIR + 'manifest.json')
+                .then(res => {
+                    if (!res.ok) throw new Error('manifest not ok');
+                    return res.json();
+                })
+                .then(items => buildGrid(items))
+                .catch(() => buildGrid(FALLBACK_MANIFEST));
+        });
+    </script>
+
+</body>
+</html>
