@@ -26,14 +26,29 @@
         }
         .section-title { color: #38bdf8; }
 
+        /* Media grid */
+        #media-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
         /* Media grid tiles */
         .media-tile {
             position: relative;
+            flex: 0 0 calc(50% - 0.5rem);
             aspect-ratio: 4 / 3;
             overflow: hidden;
             border-radius: 0.5rem;
             background: #1f2937;
             cursor: pointer;
+        }
+        @media (min-width: 640px) {
+            .media-tile { flex-basis: calc(33.333% - 0.667rem); }
+        }
+        @media (min-width: 1024px) {
+            .media-tile { flex-basis: calc(25% - 0.75rem); }
         }
         .media-tile img,
         .media-tile video {
@@ -120,7 +135,7 @@
         <section class="pb-20 bg-gray-900" aria-labelledby="galeria-heading">
             <div class="container mx-auto px-6">
                 <h2 id="galeria-heading" class="sr-only">Galeria do projeto</h2>
-                <div id="media-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div id="media-grid">
                     <!-- Preenchido dinamicamente via JS a partir de media/manifest.json -->
                 </div>
                 <p id="media-empty" class="hidden text-center text-gray-500 mt-8">Sem ficheiros na pasta media.</p>
